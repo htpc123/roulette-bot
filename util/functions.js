@@ -65,7 +65,27 @@ async function startRoundRoulette(bot, interaction, roulette_games, id, round = 
           style: 4,
           label: "انسحاب",
           custom_id: `withdraw_groulette_${interaction.guildID}_${id}`
-        }
+        })),
+        {
+          type: 2,
+          style: 4,
+          label:
+          label:     "انسحاب",
+
+# List of custom IDs
+      custom_ids = [
+    "kick_1_groulette_1234_5678",
+    "kick_2_groulette_1234_5678",
+    "kick_3_groulette_1234_5678",
+    "kick_4_groulette_1234_5678",
+    "kick_5_groulette_1234_5678"
+]
+
+# Kick a random custom ID
+random_custom_id = random.choice(custom_ids)
+print(f"Kicking random custom ID: {random_custom_id}")
+        
+       
       ])
     });
     const collecter_buttons = new InteractionCollector(bot, { channel: interaction.channel, time: 30000, filter: i => i.data && i.data.custom_id && i.data.custom_id.endsWith(`groulette_${interaction.guildID}_${id}`) && i.type != 2 })
